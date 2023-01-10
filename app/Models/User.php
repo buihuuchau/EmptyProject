@@ -41,4 +41,16 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * The relationships that should always be loaded.
+     *
+     * @var array
+     */
+    // protected $with = ['profile']; // hasOne thi ko dung with
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
 }

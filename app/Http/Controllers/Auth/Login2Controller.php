@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
@@ -31,4 +32,12 @@ class Login2Controller extends Controller
         }
     }
     //  End Test multiple Auth
+
+    //  Start Relationship
+    public function listUser(Request $request)
+    {
+        $data['listUser'] = User::find(1)->profile;
+        return view('testview', $data);
+    }
+    //  End Relationship
 }
