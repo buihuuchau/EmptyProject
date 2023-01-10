@@ -44,3 +44,7 @@ Route::post('/email/verification-notification', function (Request $request) {
 Route::get('showLogin2', [Login2Controller::class, 'showLogin2'])->name('showLogin2');
 Route::post('postLogin2', [Login2Controller::class, 'postLogin2'])->name('postLogin2');
 //  End Test multiple Auth
+
+//  Start Relationship
+Route::get('listUser', [Login2Controller::class, 'listUser'])->name('listUser');
+//  End Relationship
