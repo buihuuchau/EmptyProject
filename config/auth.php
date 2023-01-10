@@ -40,6 +40,13 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        //  Start Test multiple Auth
+        'user2' => [
+            'driver' => 'session',
+            'provider' => 'user2',
+        ],
+        //  End Test multiple Auth
     ],
 
     /*
@@ -69,6 +76,13 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
+        //  Start Test multiple Auth
+        'user2' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
+        //  Start Test multiple Auth
     ],
 
     /*

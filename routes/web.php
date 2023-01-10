@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\Login2Controller;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -38,3 +39,8 @@ Route::post('/email/verification-notification', function (Request $request) {
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
 //  End The Email Verification Notice
+
+//  Start Test multiple Auth
+Route::get('showLogin2', [Login2Controller::class, 'showLogin2'])->name('showLogin2');
+Route::post('postLogin2', [Login2Controller::class, 'postLogin2'])->name('postLogin2');
+//  End Test multiple Auth
