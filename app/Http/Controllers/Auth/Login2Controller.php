@@ -26,9 +26,9 @@ class Login2Controller extends Controller
         $user2 = Arr::only(request()->all(), $acceptFields);
 
         if (Auth::guard('user2')->attempt($user2)) {
-            dd('true', Auth::guard('user2')->user()->id);
+            return redirect('testMiddleware');
         } else {
-            dd('false', Auth::user()->id);
+            Auth::user()->id;
         }
     }
     //  End Test multiple Auth
@@ -40,4 +40,11 @@ class Login2Controller extends Controller
         return view('testview', $data);
     }
     //  End Relationship
+
+    //  Start Middleware
+    public function testMiddleware(Request $request)
+    {
+        return view('testview');
+    }
+    //  End Middleware
 }

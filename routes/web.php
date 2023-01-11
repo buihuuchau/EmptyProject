@@ -48,3 +48,9 @@ Route::post('postLogin2', [Login2Controller::class, 'postLogin2'])->name('postLo
 //  Start Relationship
 Route::get('listUser', [Login2Controller::class, 'listUser'])->name('listUser');
 //  End Relationship
+
+//  Start Middleware
+Route::middleware(['user2'])->group(function () {
+    Route::get('/testMiddleware', [Login2Controller::class, 'testMiddleware'])->name('testMiddleware');
+});
+//  End Middleware

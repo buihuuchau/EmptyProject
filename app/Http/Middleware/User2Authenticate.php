@@ -20,6 +20,7 @@ class User2Authenticate
         if (Auth::guard('user2')->check()) {
             return $next($request);
         } else {
+            dd('you are in middleware');
             return to_route('login');
         }
     }
